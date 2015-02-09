@@ -1,0 +1,147 @@
+fileFormatVersion: 2
+guid: ba78899a3d2d44e89a70b21c7d0832d2
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: 0_ground_floor_in.000
+    100002: 0_ground_floor_in.003
+    100004: 0_ground_floor_out.000
+    100006: 0_ground_floor_out.003
+    100008: 1st_floor_out.000
+    100010: 1st_floor_out.003
+    100012: 1stfloor_in.000
+    100014: 1stfloor_in.003
+    100016: 3_gate_door.000
+    100018: 3_gate_door.003
+    100020: roof.000
+    100022: roof.001
+    100024: roof.002
+    100026: roof.013
+    100028: roof.014
+    100030: roof.021
+    100032: //RootNode
+    100034: wall
+    400000: 0_ground_floor_in.000
+    400002: 0_ground_floor_in.003
+    400004: 0_ground_floor_out.000
+    400006: 0_ground_floor_out.003
+    400008: 1st_floor_out.000
+    400010: 1st_floor_out.003
+    400012: 1stfloor_in.000
+    400014: 1stfloor_in.003
+    400016: 3_gate_door.000
+    400018: 3_gate_door.003
+    400020: roof.000
+    400022: roof.001
+    400024: roof.002
+    400026: roof.013
+    400028: roof.014
+    400030: roof.021
+    400032: //RootNode
+    400034: wall
+    2300000: 0_ground_floor_in.000
+    2300002: 0_ground_floor_in.003
+    2300004: 0_ground_floor_out.000
+    2300006: 0_ground_floor_out.003
+    2300008: 1st_floor_out.000
+    2300010: 1st_floor_out.003
+    2300012: 1stfloor_in.000
+    2300014: 1stfloor_in.003
+    2300016: 3_gate_door.000
+    2300018: 3_gate_door.003
+    2300020: roof.000
+    2300022: roof.001
+    2300024: roof.002
+    2300026: roof.013
+    2300028: roof.014
+    2300030: roof.021
+    2300032: wall
+    3300000: 0_ground_floor_in.000
+    3300002: 0_ground_floor_in.003
+    3300004: 0_ground_floor_out.000
+    3300006: 0_ground_floor_out.003
+    3300008: 1st_floor_out.000
+    3300010: 1st_floor_out.003
+    3300012: 1stfloor_in.000
+    3300014: 1stfloor_in.003
+    3300016: 3_gate_door.000
+    3300018: 3_gate_door.003
+    3300020: roof.000
+    3300022: roof.001
+    3300024: roof.002
+    3300026: roof.013
+    3300028: roof.014
+    3300030: roof.021
+    3300032: wall
+    4300000: 3_gate_door.000
+    4300002: 1stfloor_in.000
+    4300004: 1st_floor_out.000
+    4300006: 0_ground_floor_out.000
+    4300008: 0_ground_floor_in.000
+    4300010: roof.002
+    4300012: roof.001
+    4300014: roof.000
+    4300016: wall
+    4300018: roof.021
+    4300020: roof.014
+    4300022: roof.013
+    4300024: 0_ground_floor_in.003
+    4300026: 0_ground_floor_out.003
+    4300028: 1st_floor_out.003
+    4300030: 1stfloor_in.003
+    4300032: 3_gate_door.003
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
