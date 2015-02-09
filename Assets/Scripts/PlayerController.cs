@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour {
 				this.gameObject.SetActive(false);
 			}
 		}
-		Debug.Log("MAin: " + this.inventory.GetSize());
+
 		if(this.inventory.GetSize() > 0) {
 			GameObject item = this.inventory.GetItem(0);
 			
@@ -39,25 +39,25 @@ public class PlayerController : MonoBehaviour {
 				case "legio_helmet":
 					GameObject head = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/neck/head");
 					item.transform.parent = head.transform; //Parenting this item to the hand bone position
-					item.transform.localPosition = new Vector3(0, 0.1f, 0.6f); // centering the sword handle
+					item.transform.localPosition = new Vector3(0, .05f, 0); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
-					item.transform.localRotation = Quaternion.Euler(270, 0, 0); //and rotate the sword accordingly
+					item.transform.localRotation = Quaternion.Euler(270, 180, 0); //and rotate the sword accordingly
 					break;
 				
 				case "legio_armor":
 					GameObject chest = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest");
 					item.transform.parent = chest.transform; //Parenting this item to the hand bone position
-					item.transform.localPosition = new Vector3(0, 0.1f, 0.6f); // centering the sword handle
+					item.transform.localPosition = new Vector3(0, .1f, .03f); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
 					item.transform.localRotation = Quaternion.Euler(270, 0, 0); //and rotate the sword accordingly
 					break;
 				
-				default:
-					GameObject right_hand = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/clavicle.R/upper_arm.R/forearm.R/hand.R");
+				case "weapon_gladius":
+					GameObject right_hand = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/clavicle.R/upper_arm.R/forearm.R/hand.R/thumb.02.R");
 					item.transform.parent = right_hand.transform; //Parenting this item to the hand bone position
-					item.transform.localPosition = new Vector3(0, 0.1f, 0.6f); // centering the sword handle
+					item.transform.localPosition = new Vector3(0, 0, 0); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
-					item.transform.localRotation = Quaternion.Euler(270, 0, 0); //and rotate the sword accordingly
+					item.transform.localRotation = Quaternion.Euler(0, 0, 0); //and rotate the sword accordingly
 					break;
 			}			
 			
