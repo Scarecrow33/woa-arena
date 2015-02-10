@@ -34,19 +34,20 @@ public class PlayerController : MonoBehaviour {
 
 		if(this.inventory.GetSize() > 0) {
 			GameObject item = this.inventory.GetItem(0);
+			GameObject attach_to = null;
 			
 			switch(item.name) {
 				case "legio_helmet":
-					GameObject head = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/neck/head");
-					item.transform.parent = head.transform; //Parenting this item to the hand bone position
+					attach_to = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/neck/head");
+					item.transform.parent = attach_to.transform; //Parenting this item to the hand bone position
 					item.transform.localPosition = new Vector3(0, .05f, 0); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
 					item.transform.localRotation = Quaternion.Euler(270, 180, 0); //and rotate the sword accordingly
 					break;
 				
 				case "legio_armor":
-					GameObject chest = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest");
-					item.transform.parent = chest.transform; //Parenting this item to the hand bone position
+					attach_to = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest");
+					item.transform.parent = attach_to.transform; //Parenting this item to the hand bone position
 					item.transform.localPosition = new Vector3(0, .1f, .03f); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
 					item.transform.localRotation = Quaternion.Euler(270, 0, 0); //and rotate the sword accordingly
@@ -58,6 +59,22 @@ public class PlayerController : MonoBehaviour {
 					item.transform.localPosition = new Vector3(0, 0, 0); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
 					item.transform.localRotation = Quaternion.Euler(0, 0, 0); //and rotate the sword accordingly
+					break;
+					
+				case "weapon_scutum":
+					GameObject left_hand = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/clavicle.L/upper_arm.L/forearm.L/hand.L");
+					item.transform.parent = left_hand.transform; //Parenting this item to the hand bone position
+					item.transform.localPosition = new Vector3(0, 0, -0.05f);
+					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
+					item.transform.localRotation = Quaternion.Euler(180, -90, 0); //and rotate the sword accordingly
+					break;
+					
+				case "legio_tunica":
+					GameObject tunica = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest");
+					item.transform.parent = tunica.transform; //Parenting this item to the hand bone position
+					item.transform.localPosition = new Vector3(0, -.03f, .05f); // centering the sword handle
+					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
+					item.transform.localRotation = Quaternion.Euler(0, 90, 0); //and rotate the sword accordingly
 					break;
 			}			
 			
