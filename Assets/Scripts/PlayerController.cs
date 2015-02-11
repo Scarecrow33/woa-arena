@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour {
 		
 		// General
 		this.inventory = this.gameObject.GetComponent<PlayerInventory>();
+		
+		// UI Messages
+		GameObject.Find("notification_box").GetComponent<Text>().text = "";
 	}
 
 	void FixedUpdate() {
@@ -85,7 +88,7 @@ public class PlayerController : MonoBehaviour {
 	private void damage(float dmg) {
 		this.current_health -= dmg;
 		this.healthSlider.value = this.current_health;
-		if(this.current_health <= 0) {
+		if(this.current_health < 0) {
 			this.dead_flag = true;
 		}
 	}	
