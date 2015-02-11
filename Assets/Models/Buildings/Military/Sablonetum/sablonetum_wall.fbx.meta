@@ -56,6 +56,7 @@ ModelImporter:
     2300028: roof.014
     2300030: roof.021
     2300032: wall
+    2300034: //RootNode
     3300000: 0_ground_floor_in.000
     3300002: 0_ground_floor_in.003
     3300004: 0_ground_floor_out.000
@@ -73,6 +74,7 @@ ModelImporter:
     3300028: roof.014
     3300030: roof.021
     3300032: wall
+    3300034: //RootNode
     4300000: 3_gate_door.000
     4300002: 1stfloor_in.000
     4300004: 1st_floor_out.000
