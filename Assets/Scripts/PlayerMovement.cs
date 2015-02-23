@@ -8,8 +8,8 @@ public class PlayerMovement : MonoBehaviour {
 	public float forwardSpeed = 5f;
 	public float rotationSpeed = 5f;
 
+	private bool IsWalking = false;
 
-	
 	//General
 	private Rigidbody playerRigidbody;
 	private CharacterController characterController;
@@ -35,7 +35,15 @@ public class PlayerMovement : MonoBehaviour {
 		float speed = this.forwardSpeed * Input.GetAxis("Vertical");
 	
 		this.characterController.SimpleMove(forward * speed);
+		if (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.S)) {
+			this.IsWalking = true;
+		} else {
+			this.IsWalking = false;
+		} 
 		
+
+		Animator tmp= this.GetComponent<Animator>();
+		tmp.SetBool ("IsWalking", this.IsWalking);
 	}
 	
 	private void Rotate() {
