@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerInventory : MonoBehaviour {
-	
-	public bool has_sword;
+
+	public bool DebugFlag = false;
 	private List<GameObject> items;
 	
 	public void AddItem(GameObject obj) {
@@ -36,10 +36,12 @@ public class PlayerInventory : MonoBehaviour {
 	}
 	
 	public void FixedUpdate() {
-		Debug.Log("Invenorysize: " + this.GetSize());
-		
-		foreach(GameObject item in items) {
-			Debug.Log("Item: " + item.GetType() + "    Name: " + item.name);
+		if (this.DebugFlag) {
+			Debug.Log("Invenorysize: " + this.GetSize());
+			
+			foreach(GameObject item in items) {
+				Debug.Log("Item: " + item.GetType() + "    Name: " + item.name);
+			}
 		}
 	}
 	

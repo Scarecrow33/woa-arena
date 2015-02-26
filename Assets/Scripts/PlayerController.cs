@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour {
 			
 			switch(item.name) {
 				case "legio_helmet":
-					attach_to = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/neck/head");
+					attach_to = GameObject.Find("/Player/RomanMan/roman_man/master/root/hips/spine/chest/neck/head");
 					item.transform.parent = attach_to.transform; //Parenting this item to the hand bone position
 					item.transform.localPosition = new Vector3(0, .05f, 0); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour {
 					break;
 				
 				case "legio_armor":
-					attach_to = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest");
+					attach_to = GameObject.Find("/Player/RomanMan/roman_man/master/n/hips/spine/chest");
 					item.transform.parent = attach_to.transform; //Parenting this item to the hand bone position
 					item.transform.localPosition = new Vector3(0, .1f, .03f); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
@@ -57,27 +57,32 @@ public class PlayerController : MonoBehaviour {
 					break;
 				
 				case "weapon_gladius":
-					GameObject right_hand = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/clavicle.R/upper_arm.R/forearm.R/hand.R/thumb.02.R");
-					item.transform.parent = right_hand.transform; //Parenting this item to the hand bone position
+					attach_to = GameObject.Find("/Player/RomanMan/roman_man/master/hips/spine/chest/clavicle.R/upper_arm.R/forearm.R/hand.R/thumb.02.R");
+					item.transform.parent = attach_to.transform; //Parenting this item to the hand bone position
 					item.transform.localPosition = new Vector3(0, 0, 0); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
 					item.transform.localRotation = Quaternion.Euler(0, 0, 0); //and rotate the sword accordingly
 					break;
 					
 				case "weapon_scutum":
-					GameObject left_hand = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest/clavicle.L/upper_arm.L/forearm.L/hand.L");
-					item.transform.parent = left_hand.transform; //Parenting this item to the hand bone position
+					attach_to = GameObject.Find("/Player/RomanMan/roman_man/master/hand.ik.L");
+					item.transform.parent = attach_to.transform; //Parenting this item to the hand bone position
 					item.transform.localPosition = new Vector3(0, 0, -0.05f);
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
 					item.transform.localRotation = Quaternion.Euler(180, -90, 0); //and rotate the sword accordingly
+					this.GetComponent<Animator>().SetBool("HasLeftItem", true);
 					break;
 					
 				case "legio_tunica":
-					GameObject tunica = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest");
-					item.transform.parent = tunica.transform; //Parenting this item to the hand bone position
+					attach_to = GameObject.Find("/Player/WoA_Man/python/hips/spine/chest");
+					item.transform.parent = attach_to.transform; //Parenting this item to the hand bone position
 					item.transform.localPosition = new Vector3(0, -.03f, .05f); // centering the sword handle
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
 					item.transform.localRotation = Quaternion.Euler(0, 90, 0); //and rotate the sword accordingly
+					break;
+				
+				default: 
+					this.GetComponent<Animator>().SetBool("HasLeftItem", false);
 					break;
 			}			
 			
