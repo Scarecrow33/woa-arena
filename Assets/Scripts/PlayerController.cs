@@ -67,9 +67,9 @@ public class PlayerController : MonoBehaviour {
 				case "weapon_scutum":
 					attach_to = GameObject.Find("/Player/RomanMan/roman_man/master/hand.ik.L");
 					item.transform.parent = attach_to.transform; //Parenting this item to the hand bone position
-					item.transform.localPosition = new Vector3(0, 0, -0.05f);
+					item.transform.localPosition = new Vector3(0, 0, 0);
 					item.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
-					item.transform.localRotation = Quaternion.Euler(180, -90, 0); //and rotate the sword accordingly
+					item.transform.localRotation = Quaternion.Euler(0, 90, 0); //and rotate the sword accordingly
 					this.GetComponent<Animator>().SetBool("HasLeftItem", true);
 					break;
 					

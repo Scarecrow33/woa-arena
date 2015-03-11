@@ -10,7 +10,7 @@ public class PickUpItem : MonoBehaviour {
 	private PlayerInventory playerInventory;
 	
 	public void Awake() {
-		//this.player = GameObject.FindWithTag("Player");
+		this.player = GameObject.FindWithTag("Player");
 		this.playerInventory = this.player.GetComponent<PlayerInventory>();
 	}
 
