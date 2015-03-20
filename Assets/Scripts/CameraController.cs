@@ -34,7 +34,6 @@ public class CameraController : MonoBehaviour {
 	void Update() {
 		if(Input.GetButton("Fire1") && Input.GetButton("Fire2")) {
 			this.free_mode = true;
-			Debug.Log("Mouse Down!");
 		} else {
 			this.free_mode = false;
 		}

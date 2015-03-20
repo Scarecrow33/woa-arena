@@ -5,7 +5,7 @@ using System.Collections;
 public class PortalScript : MonoBehaviour {
 
 	private GameObject player;
-	public Scene target;
+	public string target;
 
 	// Use this for initialization
 	void Awake() {
@@ -16,10 +16,11 @@ public class PortalScript : MonoBehaviour {
 	public void OnTriggerStay(Collider other) {
 		Text message_box = GameObject.Find("notification_box").GetComponent<Text>();
 		
-		message_box.text = "Press 'E' to use the " + this.name + " to teleport to " + target.name + "!";
+		message_box.text = "Press 'E' to use the " + this.name + " to teleport to " + target + "!";
 		
 		if(Input.GetKeyDown(KeyCode.E)) {
 			if(other.gameObject == this.player) {
+				Application.LoadLevel(target);
 				message_box.text = "";
 			}
 		}
