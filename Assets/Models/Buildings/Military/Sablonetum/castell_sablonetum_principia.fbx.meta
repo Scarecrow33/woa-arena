@@ -1,26 +1,15 @@
 fileFormatVersion: 2
-guid: fe5a2e12d727e4450aa49600c97e36eb
+guid: 95c57a7f4e701804fb505ab3f0eb82b2
+timeCreated: 1427306375
+licenseType: Free
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
-    100000: centuriae_out
-    100002: centuriae_pillar
-    100004: centuriae_roof
-    100006: //RootNode
-    400000: centuriae_out
-    400002: centuriae_pillar
-    400004: centuriae_roof
-    400006: //RootNode
-    2300000: centuriae_out
-    2300002: centuriae_pillar
-    2300004: centuriae_roof
-    3300000: centuriae_out
-    3300002: centuriae_pillar
-    3300004: centuriae_roof
-    4300000: centuriae_out
-    4300002: centuriae_pillar
-    4300004: centuriae_roof
-    9500000: //RootNode
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: principia_low
   materials:
     importMaterials: 1
     materialName: 0
@@ -48,11 +37,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -72,6 +63,8 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
