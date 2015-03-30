@@ -11,12 +11,12 @@ public class PlayerMovement : MonoBehaviour {
 	private bool IsWalking = false;
 
 	//General
-	private Rigidbody playerRigidbody;
+	//private Rigidbody playerRigidbody;
 	private CharacterController characterController;
 	
 	// Use this for initialization
 	void Awake() {
-		this.playerRigidbody = GetComponent<Rigidbody>();
+		//this.playerRigidbody = GetComponent<Rigidbody>();
 		this.characterController = this.GetComponent<CharacterController>();
 	}
 	
@@ -27,26 +27,26 @@ public class PlayerMovement : MonoBehaviour {
 	}
  
 	private void Move() {
-		if(this.characterController.isGrounded && Input.GetKeyDown(KeyCode.Space)) {
+		if(this.characterController.isGrounded && Input.GetButtonDown("Jump")) {
 			this.characterController.Move(Vector3.up);
 		}
 	
 		Vector3 forward = this.transform.TransformDirection(Vector3.forward);
-		float speed = this.forwardSpeed * Input.GetAxis("Vertical");
+		float speed = this.forwardSpeed * Input.GetAxis("MoveForward");
 	
 		this.characterController.SimpleMove(forward * speed);
-		if (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.S)) {
+		if(Input.GetButton("MoveForward") || Input.GetButton("MoveForward")) {
 			this.IsWalking = true;
 		} else {
 			this.IsWalking = false;
 		} 
 		
 
-		Animator tmp= this.GetComponent<Animator>();
-		tmp.SetBool ("IsWalking", this.IsWalking);
+		Animator tmp = this.GetComponent<Animator>();
+		tmp.SetBool("IsWalking", this.IsWalking);
 	}
 	
 	private void Rotate() {
-		this.transform.Rotate(0, Input.GetAxis("Horizontal") * this.rotationSpeed, 0);
+		this.transform.Rotate(0, Input.GetAxis("MoveSideward") * this.rotationSpeed, 0);
 	}
 }

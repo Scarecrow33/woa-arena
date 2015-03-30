@@ -98,6 +98,5 @@ public class CameraController : MonoBehaviour {
 			angle -= 360;
 		}
 		return Mathf.Clamp(angle, min, max);
-	}
-	
+	}	
 }
