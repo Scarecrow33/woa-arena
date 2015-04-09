@@ -1,15 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeaponType : MonoBehaviour {
+public enum WeaponType {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	SingleHanded,
+	TwoHanded,
+	Ranged
 }

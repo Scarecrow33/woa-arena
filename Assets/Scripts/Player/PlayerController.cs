@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour {
 		// Body
 		string basePath = "/Player/RomanMan/roman_man/master/";
 		this.head = GameObject.Find(basePath + "root/hips/spine/chest/neck/head");
-		this.chest = GameObject.Find(basePath + "root/hips/spine/chest");
+		this.chest = GameObject.Find(basePath + "root/hips/spine/chest"); 
 		this.hips = GameObject.Find(basePath + "root/hips");
 		this.hand_right = GameObject.Find(basePath + "hand.ik.R");
 		this.hand_left = GameObject.Find(basePath + "hand.ik.L");
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.K)) {
 			this.damage(5f); 
 			if(this.dead_flag) {
+				AudioSource.PlayClipAtPoint(this.deathClip, transform.position);
 				this.gameObject.SetActive(false);
 			}
 		}
@@ -109,8 +110,6 @@ public class PlayerController : MonoBehaviour {
 	/// <param name="pos">Position.</param>
 	/// <param name="rot">Rotation.</param>
 	private void equip(GameObject obj, GameObject target, Vector3 pos, Quaternion rot) {
-		Debug.Log("Object:" + obj);
-		Debug.Log("Target:" + target);
 		obj.transform.parent = target.transform; //Parenting this item to the hand bone position
 		obj.transform.localPosition = pos; // centering the sword handle
 		obj.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation

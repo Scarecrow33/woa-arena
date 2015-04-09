@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f64b26bed73434e35b6f90e3efba3164
+timeCreated: 1427816375
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - healthSlider: {instanceID: 0}
+  - deathClip: {fileID: 8300000, guid: 19204988a5b98cf4ebf172cd4e1ea2e6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

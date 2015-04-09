@@ -11,12 +11,12 @@ public class PlayerMovement : MonoBehaviour {
 	private bool IsWalking = false;
 
 	//General
-	private Rigidbody playerRigidbody;
+	//private Rigidbody playerRigidbody;
 	private CharacterController characterController;
 	
 	// Use this for initialization
 	void Awake() {
-		this.playerRigidbody = GetComponent<Rigidbody>();
+		//this.playerRigidbody = GetComponent<Rigidbody>();
 		this.characterController = this.GetComponent<CharacterController>();
 	}
 	
