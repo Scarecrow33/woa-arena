@@ -29,6 +29,8 @@ obj/
 *.unityproj
 *.booproj
 
+*.fbm*
+
 # =========================
 # Operating System Files
 # =========================
