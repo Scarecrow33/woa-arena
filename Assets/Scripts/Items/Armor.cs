@@ -1,32 +1,26 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
 /// <summary>
-/// Defines many generic attributes and methods for common weapon types. 
+/// Defines many generic attributes and methods for different types of armor.
 /// Inherits from "Item".
 /// </summary>
-[RequireComponent (typeof(SphereCollider))]
-public class Weapon : Item {
+public class Armor : Item {
 
-	
-	protected WeaponType RangeType { get; set; }
-
-	protected float baseDamage { get; set; }
-	protected float attackSpeed { get; set; }
+	protected ArmorType slot { get; set; }
+	protected double armorValue { get; set; }
 
 	public new void Awake() {
 		base.Awake();
-		this.baseDamage = 7;
-		this.attackSpeed = 1.0f;
+		this.armorValue = 0;
 	}
-
+	
 	public override void OnTriggerStay(Collider other) {
 		
 		this.notificationBox.text = "Press 'E' to pick up " + this.CanonicalName + "!";
 		
-		if(Input.GetKeyDown("Interaction")) {
-
+		if(Input.GetKeyDown("Interact")) {	
 			if(other.gameObject == this.player) {
 				AudioSource.PlayClipAtPoint(this.pickUpSound, this.player.transform.position);
 				this.playerInventory.AddItem(this.gameObject);
@@ -35,8 +29,9 @@ public class Weapon : Item {
 			}
 		}
 	}
-
+	
 	public override void OnTriggerExit(Collider other) {
 		this.notificationBox.text = null;
 	}
+	
 }

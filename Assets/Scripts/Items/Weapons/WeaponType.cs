@@ -1,7 +1,4 @@
-﻿using UnityEngine;
-using System.Collections;
-
-public enum WeaponType {
+﻿public enum WeaponType {
 
 	SingleHanded,
 	TwoHanded,
