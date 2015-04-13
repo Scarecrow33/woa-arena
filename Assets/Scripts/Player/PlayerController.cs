@@ -118,6 +118,9 @@ public class PlayerController : MonoBehaviour {
 				case "legio_tunica":
 					this.inventory.equip(obj, this.chest, new Vector3(0, -.03f, .05f), Quaternion.Euler(0, 90, 0));
 					break;
+				case "rom_komp_bow":
+					this.equip(item, this.hand_right);
+					break;
 				
 				default: 
 					break;
@@ -138,4 +141,5 @@ public class PlayerController : MonoBehaviour {
 			this.dead_flag = true;
 		}
 	}
+
 }

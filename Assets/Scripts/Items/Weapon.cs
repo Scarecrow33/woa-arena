@@ -12,8 +12,8 @@ public class Weapon : Item {
 	
 	protected WeaponType RangeType { get; set; }
 
-	protected float baseDamage { get; set; }
-	protected float attackSpeed { get; set; }
+	protected double baseDamage { get; set; }
+	protected double attackSpeed { get; set; }
 
 	public new void Awake() {
 		base.Awake();
@@ -25,7 +25,9 @@ public class Weapon : Item {
 		
 		this.notificationBox.text = "Press 'E' to pick up " + this.CanonicalName + "!";
 		
+
 		if(Input.GetButtonDown("Interact")) {
+
 
 			if(other.gameObject == this.player) {
 				AudioSource.PlayClipAtPoint(this.pickUpSound, this.player.transform.position);

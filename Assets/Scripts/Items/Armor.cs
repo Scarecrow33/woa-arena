@@ -24,7 +24,9 @@ public class Armor : Item {
 		
 		this.notificationBox.text = "Press 'E' to pick up " + this.CanonicalName + "!";
 		
+
 		if(Input.GetButtonDown("Interact")) {	
+
 			if(other.gameObject == this.player) {
 				AudioSource.PlayClipAtPoint(this.pickUpSound, this.player.transform.position);
 				this.playerInventory.AddItem(this.gameObject);
