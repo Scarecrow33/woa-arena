@@ -31,6 +31,14 @@ public abstract class Item : MonoBehaviour {
 		this.CanonicalName = this.name;
 		this.Rarety = RaretyType.Normal;
 	}
+	
+	/// <summary>
+	/// Returns a <see cref="System.String"/> that represents the current <see cref="Item"/>.
+	/// </summary>
+	/// <returns>A <see cref="System.String"/> that represents the current <see cref="Item"/>.</returns>
+	public override string ToString() {
+		return string.Format("[Item('" + this.CanonicalName + "'): " + this.Rarety + "]");
+	}
 
 	public abstract void OnTriggerStay(Collider other);
 	public abstract void OnTriggerExit(Collider other);

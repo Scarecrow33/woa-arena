@@ -61,28 +61,27 @@ public class PlayerController : MonoBehaviour {
 			
 			switch(item.name) {
 				case "legio_helmet":
-					this.equip(item, this.head, new Vector3(0, .05f, 0), Quaternion.Euler(270, 180, 0));
+					this.inventory.equip(item, this.head, new Vector3(0, .05f, 0), Quaternion.Euler(270, 180, 0));
 					break;
 				
 				case "legio_armor":
-					this.equip(item, this.chest, new Vector3(0, .01f, 0.3f), Quaternion.Euler(270, 0, 0));
+					this.inventory.equip(item, this.chest, new Vector3(0, .01f, 0.3f), Quaternion.Euler(270, 0, 0));
 					break;
 				
 				case "weapon_gladius":
-					this.equip(item, this.hand_right);
+					this.inventory.equip(item, this.hand_right);
 					break;
 					
 				case "weapon_scutum":
-					this.equip(item, this.hand_left, Vector3.zero, Quaternion.Euler(0, 90, 0));
+					this.inventory.equip(item, this.hand_left, Vector3.zero, Quaternion.Euler(0, 90, 0));
 					this.GetComponent<Animator>().SetBool("HasLeftItem", true);
 					break;
 					
 				case "legio_tunica":
-					this.equip(item, this.chest, new Vector3(0, -.03f, .05f), Quaternion.Euler(0, 90, 0));
+					this.inventory.equip(item, this.chest, new Vector3(0, -.03f, .05f), Quaternion.Euler(0, 90, 0));
 					break;
 				
 				default: 
-					this.GetComponent<Animator>().SetBool("HasLeftItem", false);
 					break;
 			}			
 			
@@ -101,48 +100,4 @@ public class PlayerController : MonoBehaviour {
 			this.dead_flag = true;
 		}
 	}
-
-	/// <summary>
-	/// Attach the specified obj to the target with a specified position and rotation.
-	/// </summary>
-	/// <param name="obj">Object.</param>
-	/// <param name="target">Target.</param>
-	/// <param name="pos">Position.</param>
-	/// <param name="rot">Rotation.</param>
-	private void equip(GameObject obj, GameObject target, Vector3 pos, Quaternion rot) {
-		obj.transform.parent = target.transform; //Parenting this item to the hand bone position
-		obj.transform.localPosition = pos; // centering the sword handle
-		obj.transform.localRotation = Quaternion.identity; //must point y local, so reset rotation
-		obj.transform.localRotation = rot; //and rotate the sword accordingly
-	}
-
-	/// <summary>
-	/// Attach the specified obj to the target with a specified position.
-	/// </summary>
-	/// <param name="obj">Object.</param>
-	/// <param name="target">Target.</param>
-	/// <param name="pos">Position.</param>
-	private void equip(GameObject obj, GameObject target, Vector3 pos) {
-		this.equip(obj, target, pos, Quaternion.identity);	
-	}
-
-	/// <summary>
-	/// Attach the specified obj to the target with a specified rotation.
-	/// </summary>
-	/// <param name="obj">Object.</param>
-	/// <param name="target">Target.</param>
-	/// <param name="rot">Rotation.</param>
-	private void equip(GameObject obj, GameObject target, Quaternion rot){
-		this.equip(obj, target, Vector3.zero, rot);	
-	}
-
-	/// <summary>
-	/// Attach the specified obj to the target.
-	/// </summary>
-	/// <param name="obj">Object.</param>
-	/// <param name="target">Target.</param>
-	private void equip(GameObject obj, GameObject target) {
-		this.equip(obj, target, Vector3.zero, Quaternion.identity);	
-	}
-
 }

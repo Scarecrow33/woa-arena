@@ -16,11 +16,13 @@ public class Armor : Item {
 		this.armorValue = 0;
 	}
 	
+	
+	
 	public override void OnTriggerStay(Collider other) {
 		
 		this.notificationBox.text = "Press 'E' to pick up " + this.CanonicalName + "!";
 		
-		if(Input.GetKeyDown("Interact")) {	
+		if(Input.GetButtonDown("Interact")) {	
 			if(other.gameObject == this.player) {
 				AudioSource.PlayClipAtPoint(this.pickUpSound, this.player.transform.position);
 				this.playerInventory.AddItem(this.gameObject);
@@ -32,6 +34,17 @@ public class Armor : Item {
 	
 	public override void OnTriggerExit(Collider other) {
 		this.notificationBox.text = null;
+	}
+	
+	/// <summary>
+	/// Returns a <see cref="System.String"/> that represents the current <see cref="Armor"/>.
+	/// </summary>
+	/// <returns>A <see cref="System.String"/> that represents the current <see cref="Armor"/>.</returns>
+	public override string ToString() {
+		return string.Format("[Armor('" + this.CanonicalName + "'):" +
+			"slot=" + this.slot +
+			", rare=" + this.Rarety +
+			", def=" + this.armorValue + "]");
 	}
 	
 }

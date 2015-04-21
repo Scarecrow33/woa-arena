@@ -25,7 +25,7 @@ public class Weapon : Item {
 		
 		this.notificationBox.text = "Press 'E' to pick up " + this.CanonicalName + "!";
 		
-		if(Input.GetKeyDown("Interaction")) {
+		if(Input.GetButtonDown("Interact")) {
 
 			if(other.gameObject == this.player) {
 				AudioSource.PlayClipAtPoint(this.pickUpSound, this.player.transform.position);
@@ -38,5 +38,17 @@ public class Weapon : Item {
 
 	public override void OnTriggerExit(Collider other) {
 		this.notificationBox.text = null;
+	}
+	
+	/// <summary>
+	/// Returns a <see cref="System.String"/> that represents the current <see cref="Weapon"/>.
+	/// </summary>
+	/// <returns>A <see cref="System.String"/> that represents the current <see cref="Weapon"/>.</returns>
+	public override string ToString() {
+		return string.Format("[Weapon('" + this.CanonicalName + "'):" + 
+			"range=" + this.RangeType +
+			", rare=" + this.Rarety +
+			", dmg=" + this.baseDamage +
+			", atkspd=" + this.attackSpeed + "]");
 	}
 }
