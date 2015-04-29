@@ -57,35 +57,73 @@ public class PlayerController : MonoBehaviour {
 		}
 
 		if(this.inventory.GetSize() > 0) {
-			GameObject item = this.inventory.GetItem(0);
+			GameObject obj = this.inventory.GetItem(0);
+			Item item = obj.GetComponent<Item>();
 			
-			switch(item.name) {
+			/*
+			if(item is Armor) {
+				Armor armor = (Armor)item;
+				GameObject slot = null;
+				switch(armor.slot) {
+					case ArmorType.Head:
+						slot = this.head;
+						break;
+					case ArmorType.Shoulder:
+						slot = null;
+						break;
+					case ArmorType.Chest:
+						slot = this.chest;
+						break;
+					case ArmorType.Hip:
+						slot = this.hips;
+						break;
+					case ArmorType.Legs:
+						slot = null;
+						break;
+					case ArmorType.Feet:
+						slot = this.feet_right;
+						break;
+					case ArmorType.Hands:
+						slot = this.hand_right;
+						break;
+					default:
+						break;
+				}
+				this.inventory.equip();
+				
+			} else if(item is Weapon) {
+			
+			} else {
+			
+			}
+			*/
+			switch(item.CanonicalName) {
 				case "legio_helmet":
-					this.inventory.equip(item, this.head, new Vector3(0, .05f, 0), Quaternion.Euler(270, 180, 0));
+					this.inventory.equip(obj, this.head, new Vector3(0, .05f, 0), Quaternion.Euler(270, 180, 0));
 					break;
 				
 				case "legio_armor":
-					this.inventory.equip(item, this.chest, new Vector3(0, .01f, 0.3f), Quaternion.Euler(270, 0, 0));
+					this.inventory.equip(obj, this.chest, new Vector3(0, .01f, 0.3f), Quaternion.Euler(270, 0, 0));
 					break;
 				
 				case "weapon_gladius":
-					this.inventory.equip(item, this.hand_right);
+					this.inventory.equip(obj, this.hand_right);
 					break;
 					
 				case "weapon_scutum":
-					this.inventory.equip(item, this.hand_left, Vector3.zero, Quaternion.Euler(0, 90, 0));
+					this.inventory.equip(obj, this.hand_left, Vector3.zero, Quaternion.Euler(0, 90, 0));
 					this.GetComponent<Animator>().SetBool("HasLeftItem", true);
 					break;
 					
 				case "legio_tunica":
-					this.inventory.equip(item, this.chest, new Vector3(0, -.03f, .05f), Quaternion.Euler(0, 90, 0));
+					this.inventory.equip(obj, this.chest, new Vector3(0, -.03f, .05f), Quaternion.Euler(0, 90, 0));
 					break;
 				
 				default: 
 					break;
 			}			
 			
-			this.inventory.RemoveItem(0);
+			//this.inventory.RemoveItem(0);
 		}
 	}
 

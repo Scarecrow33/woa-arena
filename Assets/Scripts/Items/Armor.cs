@@ -6,10 +6,12 @@ using System.Collections;
 /// Defines many generic attributes and methods for different types of armor.
 /// Inherits from "Item".
 /// </summary>
+[RequireComponent (typeof(SphereCollider))]
 public class Armor : Item {
 
-	protected ArmorType slot { get; set; }
-	protected double armorValue { get; set; }
+	public ArmorType slot { get; set; }
+	public double armorValue { get; protected set; }
+	
 
 	public new void Awake() {
 		base.Awake();
