@@ -59,10 +59,11 @@ public class PlayerController : MonoBehaviour {
 		if(this.inventory.GetSize() > 0) {
 			GameObject obj = this.inventory.GetItem(0);
 			Item item = obj.GetComponent<Item>();
+			
 
 			/*
 			 * ToDo: Complete inventory equip mechanism
-			if(item is Armor) {
+			 if(item is Armor) {
 				Armor armor = (Armor)item;
 				GameObject slot = null;
 				switch(armor.slot) {
@@ -90,15 +91,23 @@ public class PlayerController : MonoBehaviour {
 					default:
 						break;
 				}
-
-				this.inventory.equip(obj, slot);
+				this.inventory.equip();
 				
 			} else if(item is Weapon) {
-			
-			} else {
-			
-			}*/
+				Weapon weapon = (Weapon) Item;
+				GameObject slot = null;
+				switch(weapon.slot){
+				case WeaponType.SingleHanded:
+					slot = this.hand_right;
+					break;
+				case WeaponType.TwoHanded:
+					slot=null;
+					break;
+				case WeaponType.Ranged:
+					slot=this.hand_right;
+					break;
 
+			} */
 			switch(item.CanonicalName) {
 				case "legio_helmet":
 					this.inventory.equip(obj, this.head, new Vector3(0, .05f, 0), Quaternion.Euler(270, 180, 0));
@@ -120,6 +129,9 @@ public class PlayerController : MonoBehaviour {
 				case "legio_tunica":
 					this.inventory.equip(obj, this.chest, new Vector3(0, -.03f, .05f), Quaternion.Euler(0, 90, 0));
 					break;
+				case "Compound Bow":
+					this.inventory.equip(obj, this.hand_right);
+					break;
 				
 				default: 
 					break;
@@ -128,6 +140,7 @@ public class PlayerController : MonoBehaviour {
 			//this.inventory.RemoveItem(0);
 		}
 	}
+	
 
 	/// <summary>
 	/// Damage the specified the player by the specified amount of damage.
@@ -140,4 +153,5 @@ public class PlayerController : MonoBehaviour {
 			this.dead_flag = true;
 		}
 	}
+
 }
